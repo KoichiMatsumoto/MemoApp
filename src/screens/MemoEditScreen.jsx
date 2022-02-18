@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-} from "react-native";
+import { View, Text, StyleSheet, TextInput, Alert } from "react-native";
 import AppBar from "../components/AppBar";
 import CircleButton from "../components/CircleButton";
 import KeyboardSafeView from "../components/KeyboardSafeView";
 
 export default function MemoEditScreen() {
   return (
-    <KeyboardSafeView style={styles.container} >
+    <KeyboardSafeView style={styles.container}>
       <AppBar />
       <View style={styles.inputContainer}>
         <TextInput value="Shopping List" multiline style={styles.input} />
