@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, ScrollView, StyleSheet } from "react-native";
-import AppBar from "../components/AppBar";
 import CircleButton from "../components/CircleButton";
 
-export default function MemoDetailScreen() {
+export default function MemoDetailScreen(props) {
+  const { navigation } = props;
+
   return (
     <View style={styles.container}>
-      <AppBar />
       <View style={styles.memoHeader}>
         <Text style={styles.memoTitle}>Shopping List</Text>
         <Text style={styles.memoDate}>28/Jan/2022 10:00</Text>
@@ -16,7 +16,13 @@ export default function MemoDetailScreen() {
           Shopping List What I neen to buy today is something nice close.
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit-2" />
+      <CircleButton
+        style={{ top: 60, bottom: "auto" }}
+        name="edit-2"
+        onPress={() => {
+          navigation.navigate('MemoEdit');
+        }}
+      />
     </View>
   );
 }
@@ -51,5 +57,5 @@ const styles = StyleSheet.create({
   memoText: {
     fontSize: 16,
     lineHeight: 24,
-  }
+  },
 });
